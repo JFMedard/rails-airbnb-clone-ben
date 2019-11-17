@@ -91,5 +91,20 @@ user10 = User.create!(
   password_confirmation: "123456"
 )
 
+# -------------------------------------
+
+lama1 = Lama.create!(
+  title: "Serge Lama",
+  description: "A truly vocal and harmonic lama. ",
+  price: 4000.00,
+  is_available: true,
+  capacity: 3,
+  driver: true,
+  created_at: "2019-11-17 [11:22:33]",
+  updated_at: "2019-11-18 [11:45:33]",
+  user: user2,
+  remote_photo_url: ''
+)
+
 puts 'Seed: Finished seeding!'
 
