@@ -1,0 +1,37 @@
+<!-- To be uncommented when lama model and controller present -->
+<!-- <%= link_to lama_path(lama), class: "Card" do %>
+  <div class="Card__inner">
+    <figure class="Card__img">
+      <% if lama.photo.present? %>
+        <img
+          src='<%= "#{lama.photo_url(:placeholder)}" %>'
+          data-lowsrc='<%= "#{lama.photo_url(:placeholder)}" %>'
+          data-src='<%= "#{lama.photo}" %>'
+          alt='<%= "#{lama.title}" %>'
+          class="lazyload"
+          />
+      <% end %>
+    </figure>
+    <div class="Card__body">
+      <h3 class="Card__title"><%= lama.title %></h3>
+      <div class="Card__price">$ <%= "#{lama.price}0" %> / day</div>
+      <div class="Card__meta">
+        <div class="Card__rating">
+            <div class="d-flex">
+              <% (1..5).to_a.each do |el| %>
+                <% if  lama.reviews.present? %>
+                    <% if el <= lama.reviews.last.rating %>
+                      <i class="fas fa-star" style="color: #ffb400;"></i>
+                  <% else %>
+                    <i class="fas fa-star" style="color: #ccc"></i>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </span>
+        </div>
+          <i class="fas fa-heart color-grey-text"></i>
+      </div>
+    </div>
+  </div>
+<% end %> -->
