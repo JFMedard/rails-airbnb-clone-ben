@@ -18,78 +18,25 @@ puts 'Seed: Seeding...'
 
 user1 = User.create!(
   email: "malcolm@gmail.com",
-  first_name: "Malcolm",
-  last_name: "The Rich",
+  username: "Test1",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user2 = User.create!(
   email: "janlosthisphone@yahoo.com",
-  first_name: "Jan",
-  last_name: "Losthisphone",
+  username: "Test2"
   password: "123456",
   password_confirmation: "123456"
 )
 
 user3 = User.create!(
   email: "hien.was.eaten.by.flora@gmail.com",
-  first_name: "Hien",
-  last_name: "Flora",
+  username: "Test3"
   password: "123456",
   password_confirmation: "123456"
 )
 
-user4 = User.create!(
-  email: "porschefan4@gmail.com",
-  first_name: "Porsche4",
-  last_name: "Fan",
-  password: "123456",
-  password_confirmation: "123456"
-)
-
-user5 = User.create!(
-  email: "porschefan5@gmail.com",
-  first_name: "Porsche5",
-  last_name: "Fan",
-  password: "123456",
-  password_confirmation: "123456"
-)
-user6 = User.create!(
-  email: "porschefan6@gmail.com",
-  first_name: "Porsche6",
-  last_name: "Fan",
-  password: "123456",
-  password_confirmation: "123456"
-)
-user7 = User.create!(
-  email: "porschefan7@gmail.com",
-  first_name: "Porsche7",
-  last_name: "Fan",
-  password: "123456",
-  password_confirmation: "123456"
-)
-user8 = User.create!(
-  email: "porschefan8@gmail.com",
-  first_name: "Porsche8",
-  last_name: "Fan",
-  password: "123456",
-  password_confirmation: "123456"
-)
-user9 = User.create!(
-  email: "porschefan9@gmail.com",
-  first_name: "Porsche9",
-  last_name: "Fan",
-  password: "123456",
-  password_confirmation: "123456"
-)
-user10 = User.create!(
-  email: "porschefan11@gmail.com",
-  first_name: "Porsche11",
-  last_name: "Fan",
-  password: "123456",
-  password_confirmation: "123456"
-)
 
 # -------------------------------------
 
@@ -97,12 +44,41 @@ lama1 = Lama.create!(
   title: "Serge Lama",
   description: "A truly vocal and harmonic lama. ",
   price: 4000.00,
+  address: "Paris"
   is_available: true,
   capacity: 3,
   driver: true,
   created_at: "2019-11-17 [11:22:33]",
   updated_at: "2019-11-18 [11:45:33]",
   user: user2,
+  remote_photo_url: ''
+)
+
+lama2 = Lama.create!(
+  title: "Dalaï Lama",
+  description: "The spiritual lama. ",
+  price: 1000.00,
+  address: "Tibet"
+  is_available: true,
+  capacity: 2,
+  driver: true,
+  created_at: "2019-11-17 [11:22:33]",
+  updated_at: "2019-11-18 [11:45:33]",
+  user: user1,
+  remote_photo_url: ''
+)
+
+lama3 = Lama.create!(
+  title: "Lama Del Rey",
+  description: "Summertime lamaness. ",
+  price: 1000.00,
+  address: "New York"
+  is_available: true,
+  capacity: 1,
+  driver: true,
+  created_at: "2019-11-17 [11:22:33]",
+  updated_at: "2019-11-18 [11:45:33]",
+  user: user3,
   remote_photo_url: ''
 )
 
