@@ -19,17 +19,7 @@
       <div class="Card__price">$ <%= "#{lama.price}0" %> / day</div>
       <div class="Card__meta">
         <div class="Card__rating">
-            <div class="d-flex">
-              <% (1..5).to_a.each do |el| %>
-                <% if  lama.reviews.present? %>
-                    <% if el <= lama.reviews.last.rating %>
-                      <i class="fas fa-star" style="color: #ffb400;"></i>
-                  <% else %>
-                    <i class="fas fa-star" style="color: #ccc"></i>
-                  <% end %>
-                <% end %>
-              <% end %>
-            </div>
+
         </div>
           <i class="fas fa-heart color-grey-text"></i>
       </div>

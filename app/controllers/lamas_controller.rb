@@ -18,7 +18,7 @@ class LamasController < ApplicationController
 
   def show
     @lama = Lama.find(params[:id])
-    # @booking = Booking.new
+    @booking = Booking.new
   end
 
   def edit
