@@ -38,6 +38,7 @@ class LamasController < ApplicationController
   end
 
   private
+
   def lama_params
     params.require(:lama).permit(:title, :description, :price, :capacity)
   end
