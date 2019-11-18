@@ -1,18 +1,18 @@
 <div class="container">
   <h1> LAMAS IN THE CITY</h1>
-  <section class="boats">
+  <section class="lamas">
     <div class="container-fluid">
       <h3><%= @lamas.count %> lamas</h3>
-      <div class="Cards">
-        <div class="Cards__grid">
+      <div class="cards">
+        <div class="cards__grid">
           <% @lamas.each do |lama|  %>
             <div class="grid-item">
               <%= render 'shared/card', lama: lama %>
             </div>
           <% end %>
         </div>
-        <div class="Map Cards__map">
-          <div class="Map__inner">
+        <div class="map cards__map">MAP
+          <div class="map__inner">
             <div id="map"
               style="width: 100%;"
               data-markers="<%= @markers.to_json %>">
@@ -24,4 +24,5 @@
   </section>
 
 </div>
+
 
