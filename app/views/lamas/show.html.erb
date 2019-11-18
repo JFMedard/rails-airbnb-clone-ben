@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="card-lama" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1511885663737-eea53f6d6187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80)"></div>
+  <div class="col-4">
+    <h1><%= @lama.title %></h1>
+    <p><%= @lama.photo %></p>
+    <p><%= @lama.description %></p>
+    <h2><%= @lama.price %>€</h2>
+    <p><i class="fas fa-user-friends"></i> <%= @lama.capacity %> travellers</p>
+    <p><i class="fas fa-map-marker-alt"></i> <%= @lama.address %></p>
+  </div>
+</div>
