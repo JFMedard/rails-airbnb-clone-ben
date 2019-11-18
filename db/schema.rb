@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_145523) do
+ActiveRecord::Schema.define(version: 2019_11_17_182238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lamas", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.float "price"
+    t.string "address"
+    t.boolean "is_available"
+    t.integer "capacity"
+    t.boolean "driver"
+    t.string "photo"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lamas_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +47,5 @@ ActiveRecord::Schema.define(version: 2019_11_17_145523) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lamas", "users"
 end
