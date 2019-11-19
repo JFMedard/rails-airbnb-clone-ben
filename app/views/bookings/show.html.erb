@@ -1,4 +1,9 @@
 <div class="container">
-  <h1>Congratulations for your booking</h1>
-  <h2>@booking.lamas.total_price</h2>
+  <h1>Congratulations 🦙</h1>
+  <br>
+  <h2>You booked <%= @booking.lama.title%></h2>
+  <h2>From <%= @booking.start%> to <%= @booking.end %></h2>
+  <h2>Total price : <%= (@booking.lama.price) * (@booking.end - @booking.start).to_i %>€</h2>
+  <br>
+  <h2>Enjoy your ride !</h2>
 </div>
