@@ -1,23 +1,39 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+  margin: 0;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  border: 0;
+  border-radius: 0;
+}
+
+.alert-dismissible .close {
+  top: 0;
+  right: 0;
+  padding: 0 52rem 0 800rem;
+  color: $gray-light;
+  :hover {
+  color: white;
+  }
 }
 
 .flash {
-  padding: 16px 24px;
+  font-color: white;
+  padding: 0 5px 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background: white;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
-  margin: 8px;
+  margin: 16px 0;
 }
 
 .flash-success {
-  border: 2px solid #1EDD88;
+  border: 2px solid $green;
+  background-color: $success
 }
 
 .flash-warning {
@@ -25,5 +41,6 @@
 }
 
 .flash-danger {
-  border: 2px solid #FD1015;
+  border: 2px solid $red;
+  background-color: $danger;
 }
