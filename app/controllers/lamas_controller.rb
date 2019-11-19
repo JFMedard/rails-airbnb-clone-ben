@@ -1,7 +1,6 @@
 class LamasController < ApplicationController
   def index
-    @lamas = Lama.all
-    # authorize @lama
+    @lamas = Lama.search(params[:search])
   end
 
   def new
@@ -48,6 +47,6 @@ class LamasController < ApplicationController
   private
 
   def lama_params
-    params.require(:lama).permit(:title, :description, :price, :capacity, :address)
+    params.require(:lama).permit(:title, :description, :price, :capacity, :address, :search, photos: [])
   end
 end

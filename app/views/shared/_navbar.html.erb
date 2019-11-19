@@ -3,6 +3,8 @@
     <%= image_tag "https://cdn2.iconfinder.com/data/icons/animal-fill-icons-set/144/Alpaca-512.png" %>
     <% end %>
 
+
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,11 +13,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <% if policy(Lama).create? %>
           <li class="nav-item active">
             <%= link_to "List your lama", new_lama_path, class: "nav-link" %>
           </li>
-        <% end %>
+
           <li class="nav-item active">
             <%= link_to "Lamas", lamas_path, class: "nav-link" %>
           </li>
@@ -23,9 +24,9 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://res.cloudinary.com/dq24zunln/image/upload/v1574093926/#{current_user.photo.key}.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Your settings", "#", class: "dropdown-item" %>
+              <%= link_to "Your settings", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
