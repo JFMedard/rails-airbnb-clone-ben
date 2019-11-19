@@ -3,4 +3,12 @@ class Lama < ApplicationRecord
   has_many :bookings
   validates :title, :description, :price, :capacity, presence: true
   validates :title, uniqueness: true
+
+  def self.search(search)
+    if search
+      Lama.where("address like ?", "%#{search}%")
+    else
+      Lama.all
+    end
+  end
 end
