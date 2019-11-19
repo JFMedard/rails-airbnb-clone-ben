@@ -1,0 +1,21 @@
+.map{
+  height: 100vh;
+  padding: 0 10px;
+  position: sticky;
+  top: 0;
+}
+@media(max-width: 991px){
+  .main-container{
+    display: block;
+  }
+}
+@media(max-width: 768px){
+  .main-container{
+    display: block;
+  }
+}
+@media(max-width: 576px){
+  .main-container{
+    display: block;
+  }
+}
