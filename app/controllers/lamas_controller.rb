@@ -1,6 +1,6 @@
 class LamasController < ApplicationController  def index
     @lamas = Lama.all
-    authorise @lama
+    authorize @lama
   end
 
   def new
@@ -14,31 +14,31 @@ class LamasController < ApplicationController  def index
     else
       render 'new'
     end
-    authorise @lama
+    authorize @lama
   end
 
   def show
     @lama = Lama.find(params[:id])
     @booking = Booking.new
-    authorise @lama
+    authorize @lama
   end
 
   def edit
     @lama = Lama.find(params[:id])
-    authorise @lama
+    authorize @lama
   end
 
   def update
     @lama = Lama.find(params[:id])
     @lama.update(lama_params)
-    authorise @lama
+    authorize @lama
     redirect_to lamas_path(@lamas)
   end
 
   def destroy
     @lama = Lama.find(params[:id])
     @lama.destroy
-    authorise @lama
+    authorize @lama
     redirect_to lamas_path(@lamas)
   end
 
