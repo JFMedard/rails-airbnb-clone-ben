@@ -4,17 +4,18 @@ class BookingsController < ApplicationController
   end
 
   def show
-    authorize @booking
+    # authorize @booking
+    set_booking
   end
 
   def new
     @booking = Booking.new
-    authorize @booking
+    # authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
-    authorize @booking
+    # authorize @booking
     @booking.user = current_user
     @booking.lama = Lama.find(params[:boat_id])
     if @booking.save
