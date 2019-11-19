@@ -1,28 +1,15 @@
-<div class="container">
+<div class="main-container">
   <h1> LAMAS IN THE CITY</h1>
-  <section class="lamas">
-    <div class="container-fluid">
-      <h3><%= @lamas.count %> lamas</h3>
-      <div class="cards">
-        <div class="cards__grid">
-          <% @lamas.each do |lama|  %>
-            <div class="grid-item">
-              <%= render 'shared/card', lama: lama %>
-            </div>
-          <% end %>
-        </div>
-        <div class="map cards__map">MAP
-          <div class="map__inner">
-            <div id="map"
-              style="width: 100%;"
-              data-markers="<%= @markers.to_json %>">
-            </div>
-          </div>
-        </div>
-      </div>
+  <h3><%= @lamas.count %> lamas</h3>
+  <div class="cards">
+    <div class="card" style="background-image: url(https://source.unsplash.com/350x350/?lamas)">
+      <% @lamas.each do |lama|  %>
+        <%= render 'shared/card', lama: lama %>
+      <% end %>
     </div>
-  </section>
-
+  </div>
 </div>
 
-
+<div class="map">
+  <img id="map" src='https://raw.githubusercontent.com/lewagon/layouts-demo/gh-pages/images/mapbox.png'>
+</div>
