@@ -1,4 +1,5 @@
-class LamasController < ApplicationController  def index
+class LamasController < ApplicationController
+  def index
     @lamas = Lama.all
     authorize @lama
   end
