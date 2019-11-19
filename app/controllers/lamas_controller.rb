@@ -10,8 +10,10 @@ class LamasController < ApplicationController
 
   def create
     @lama = Lama.new(lama_params)
+    @user = current_user
+    @lama.user = @user
     if @lama.save
-      redirect_to lamas_path(@lamas)
+      redirect_to lama_path(@lama)
     else
       render 'new'
     end
