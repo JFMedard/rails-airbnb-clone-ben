@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     # authorize @booking
     @booking.user = current_user
-    @booking.lama = Lama.find(params[:boat_id])
+    @booking.lama = Lama.find(params[:lama_id])
     if @booking.save
       redirect_to booking_path(@booking)
     else

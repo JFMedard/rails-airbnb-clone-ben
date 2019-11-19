@@ -3,9 +3,9 @@
     <div class="Banner__content">
       <h1 class="Banner__heading">Call your friends and wander on a lama</h1>
       <p class="Banner__leading">Find and rent the perfect lama. Driver is optional.</p>
-      <%= form_tag('/lamas', method: "get", class: "Banner__form") do %>
+      <%= form_tag(lamas_path, method: "get", class: "Banner__form") do %>
         <div class="input-group input-group-lg">
-          <%= text_field_tag(:query, nil, placeholder: "What kind of lama are you?", class: "Input Banner__input form-control") %>
+          <%= text_field_tag(:search, params[:search], placeholder: "Where would you ride your lama?", class: "Input Banner__input form-control") %>
           <div class="input-group-btn">
             <%= button_tag :submit, class: "btn btn-primary btn-lg" do %>
               <i class="fa fa-search" aria-hidden="true"></i>
