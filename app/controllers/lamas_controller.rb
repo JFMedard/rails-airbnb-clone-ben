@@ -6,6 +6,7 @@ class LamasController < ApplicationController
 
   def new
     @lama = Lama.new
+    # authorize @lama
   end
 
   def create
@@ -22,6 +23,7 @@ class LamasController < ApplicationController
     @lama = Lama.find(params[:id])
     @booking = Booking.new
     # authorize @lama
+
   end
 
   def edit
