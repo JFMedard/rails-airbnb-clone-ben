@@ -1,0 +1,19 @@
+
+
+<div class="form-registration">
+  <div class="form-group">
+    <h1>Add your lama :</h1>
+    <%= simple_form_for @lama do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :price, as: :integer %>
+      <%= f.input :address %>
+      <%= f.input :capacity, as: :integer %>
+
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <div class="form-actions">
+      <%= f.button :submit, "Create lama!", class: 'btn btn-success btn-block' %>
+      </div>
+    <% end %>
+  </div>
+</div>
