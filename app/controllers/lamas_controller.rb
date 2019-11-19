@@ -47,6 +47,6 @@ class LamasController < ApplicationController
   private
 
   def lama_params
-    params.require(:lama).permit(:title, :description, :price, :capacity, :address, :search)
+    params.require(:lama).permit(:title, :description, :price, :capacity, :address, :search, photos: [])
   end
 end

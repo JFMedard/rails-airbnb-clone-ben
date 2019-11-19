@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :owned_lamas, dependent: :destroy, class_name: 'Lama'
+  has_one_attached :photo
   # Validate password
   validates_length_of :password, in: 6..20, on: :create
 
