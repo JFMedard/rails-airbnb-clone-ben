@@ -1,3 +1,11 @@
 <div class="container">
   <h1>My bookings</h1>
+
+  <% @bookings.each do |booking| %>
+    <%= booking.total_price %>
+    <%= booking.start %>
+    <%= booking.end %>
+    <%= booking.number_of_users %>
+    <%= booking.driver_manager %>
+  <% end %>
 </div>
