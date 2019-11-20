@@ -2,9 +2,10 @@
   padding: 28px 0;
   color: $white;
   background-color: $dark;
-  position: relative;
   bottom: 0;
   width: 100%;
+  position: absolute;
+
 }
 
 .footer-container.container::before,
