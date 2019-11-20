@@ -28,7 +28,7 @@
 }
 
 .Navbar {
-  background-color: $white;
+  // background-color: $white;
   position: fixed;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 
@@ -38,7 +38,7 @@
 }
 
 .Navbar--transparent {
-  color: $white;
+  // color: $white;
   position: fixed;
   top: 0;
   left: 0;
@@ -46,7 +46,7 @@
 
 .Navbar--fixed {
   position: fixed;
-  background-color: $white;
+  // background-color: $white;
   color: $dark;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   animation: fade 0.3s ease-in-out;
