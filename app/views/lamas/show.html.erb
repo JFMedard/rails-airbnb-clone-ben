@@ -21,9 +21,9 @@
       <div class="form-group">
         <h1>Book me :</h1>
         <%= simple_form_for [@lama, @booking] do |f| %>
-          <%= f.input :start, as: :string, required: false, input_html: { id: "range_start" } %>
-          <%= f.input :end, as: :string, required: false, input_html: { id: "range_end" } %>
-          <%= f.input :number_of_users %>
+          <%= f.input :start, :label => "Pick up date", as: :string, required: false, input_html: { id: "range_start" } %>
+          <%= f.input :end, :label => "Return date", as: :string, required: false, input_html: { id: "range_end" } %>
+          <%= f.input :number_of_users, :label => "Number of riders on the lama", collection: 1..(@lama.capacity) %>
           <%= f.input :driver_manager %>
           <h4><%= @booking["end"] %></h4>
           <div class="form-actions">

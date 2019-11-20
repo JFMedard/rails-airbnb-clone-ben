@@ -9,8 +9,8 @@
           <h2><%= booking.lama.title %></h2>
           <p>From <strong><%= booking.start %></strong> to <strong><%= booking.end %></strong></p>
           <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
-          <p>For : <strong><%= booking.number_of_users %></strong></p>
-          <p>With : <strong><%= booking.driver_manager %></strong></p>
+          <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
+          <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
         </div>
       </div>
       <div class="card-booking-status text-center"><p>Booking status</p><i class="fas fa-hourglass-half fa-3x"></i></i></div>
