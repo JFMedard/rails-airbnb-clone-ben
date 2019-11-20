@@ -24,7 +24,7 @@
           <%= f.input :start, :label => "From", as: :string, required: false, input_html: { id: "range_start" } %>
           <%= f.input :end, :label => "Until", as: :string, required: false, input_html: { id: "range_end" } %>
           <%= f.input :number_of_users, :label => "Number of riders on the lama", collection: 1..(@lama.capacity) %>
-          <%= f.input :driver_manager %>
+          <%= f.input :driver_manager, :label => "I need a driver" %>
           <h4><%= @booking["end"] %></h4>
           <div class="form-actions">
           <%= f.button :submit, "Book #{@lama.title}", class: 'btn btn-primary btn-block' %>
