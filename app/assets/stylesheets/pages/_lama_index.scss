@@ -9,11 +9,16 @@
   grid-gap: 16px;
   margin: 10px;
   padding-right: 5px;
-  // display: flex;
-  // justify-content: space-evenly;
 
   .card {
     margin-right: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  .card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    }
   }
 
   a {
