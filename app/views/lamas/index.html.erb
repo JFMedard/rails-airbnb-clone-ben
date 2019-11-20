@@ -1,5 +1,9 @@
 <div class="container pt-5">
-  <h1><strong>Lamas</strong> in <%= params[:search] %></h1>
+  <% if params[:search] == nil %>
+    <h1><strong>All lamas</strong></h1>
+  <% else %>
+    <h1><strong>Lamas</strong> in <%= params[:search] %></h1>
+  <% end %>
   <h3><%= @lamas.count %> 🦙</h3>
   <div class="main-container">
         <div class="cards">
@@ -13,7 +17,7 @@
             <% end %>
               <div class="card-body">
                 <h5 class="card-title"><%= lama.title %></h5>
-                <p class="card-text">$ <%= "#{lama.price}0" %> / day</p>
+                <p class="card-text"><%= lama.price %>€/day</p>
               </div>
             </div>
             <% end %>
