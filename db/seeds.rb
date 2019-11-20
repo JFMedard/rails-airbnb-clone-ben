@@ -5,13 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# file = URI.open('https://meme.eq8.eu/noidea.jpg')
+# lama = Lama.new(title: 'NES', body: "A great console")
+# lama.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+# article.save
+
+
 puts 'Seed: Deleting existing records...'
 
 # Instances to be added later
 
 # Review.delete_all
-# Booking.delete_all
-# Boat.delete_all
+Booking.delete_all
+Lama.delete_all
 User.delete_all
 
 puts 'Seed: Seeding...'
