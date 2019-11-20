@@ -6,7 +6,11 @@
           <% @lamas.each do |lama|  %>
             <%= link_to lama_path(lama) do %>
             <div class="card">
-              <img src="https://source.unsplash.com/200x200/?lamas" class="card-img-top" alt="lama">
+              <% if lama.photos.attached? %>
+              <img src="<%= cl_image_path current_user.photo.key, height: 50, width: 50, crop: :fill %>" class="card-img-top" alt="lama">
+              <% else %>
+
+              <% end %>
               <div class="card-body">
                 <h5 class="card-title"><%= lama.title %></h5>
                 <p class="card-text">$ <%= "#{lama.price}0" %> / day</p>
