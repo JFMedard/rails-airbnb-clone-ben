@@ -29,11 +29,9 @@
     </div>
     <%= link_to "Cancel booking", user_booking_path(@user, booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary btn-block' %>
   <% end %>
-
   <% end %>
-
+  
   <% @user = current_user %>
-
   <h2>Upcoming bookings for my lamas.</h2>
   <% @bookings.each do |booking| %>
     <% if booking.lama.user_id == @user.id %>
@@ -46,7 +44,7 @@
       <% end %>
         <div class="card-product-infos">
           <h2><%= booking.lama.title %></h2>
-          <p>From <strong><%= booking.start.strftime("%d %B %Y") %></strong> to <strong><%= booking.end.strftime("%d %B %Y") %></strong></p>
+          <p>From <strong><%= booking.start %></strong> to <strong><%= booking.end %></strong></p>
           <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
           <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
           <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
@@ -59,6 +57,19 @@
         <% end %>
       </div>
     </div>
+    <% else %>
+    <% end %>
+  <% end %>
+
+  <h2><strong>My own lamas</strong></h2>
+  <% @lamas.each do |lama| %>
+  <% @user = current_user %>
+    <% if lama.user_id == @user.id %>
+      <% if lama.photos.first %>
+        <%= cl_image_tag lama.photos.first.key, crop: :fill %><h2><%= lama.title %></h2>
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80" class="card-img-top" alt="lama"><h2><%= lama.title %></h2>
+      <% end %>
     <% else %>
     <% end %>
   <% end %>
