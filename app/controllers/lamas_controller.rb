@@ -43,9 +43,8 @@ class LamasController < ApplicationController
   def show
     @lama = Lama.find(params[:id])
     @booking = Booking.new
-    @review = Review.all
+    @review = Review.where(lama_id: @lama.id)
     # authorize @lama
-
   end
 
   def edit
