@@ -43,6 +43,7 @@ class LamasController < ApplicationController
   def show
     @lama = Lama.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
     # authorize @lama
 
   end
