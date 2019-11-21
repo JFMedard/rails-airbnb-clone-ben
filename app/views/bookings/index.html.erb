@@ -1,8 +1,10 @@
 <div class="container p-3">
   <br>
   <br>
-  <h2><strong>My bookings</strong></h2>
+
   <% @user = current_user %>
+  <% unless @user.bookings.count == 0 %>
+  <h2>My upcoming bookings</h2>
   <% @user.bookings.each do |booking| %>
     <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
       <div class="card-product my-4">
@@ -27,9 +29,10 @@
     </div>
     <%= link_to "Cancel booking", user_booking_path(@user, booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary btn-block' %>
   <% end %>
-
-  <h2><strong>My lamas booked</strong></h2>
+  <% end %>
+  
   <% @user = current_user %>
+  <h2>Upcoming bookings for my lamas.</h2>
   <% @bookings.each do |booking| %>
     <% if booking.lama.user_id == @user.id %>
     <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
@@ -45,11 +48,12 @@
           <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
           <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
           <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
-          <p>Status : <%= booking.status == "pending" ? "pending" : "validated" %></p>
+
         </div>
         <% if booking.status == "pending" %>
-          <%= link_to "Booking pending", user_bookings_path(booking), class: 'btn btn-success' %>
+          <%= link_to "Validate", user_booking_path(@user, booking), method: :patch, class: 'btn btn-success' %>
         <% else %>
+          <%= link_to "Confirmed", "#", class: 'btn btn-success float-right' %>
         <% end %>
       </div>
     </div>

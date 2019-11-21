@@ -6,7 +6,7 @@
   <div class="booking-details mx-3 bg-white p-3">
     <h2>You booked <strong><%= @booking.lama.title%></strong></h2>
     <h2>From <%= @booking.start.strftime("%d %B %Y") %> to <%= @booking.end.strftime("%d %B %Y") %></h2>
-    <h2>Total price : <%= (@booking.lama.price) * (@booking.end - @booking.start).to_i %>€</h2>
+    <h2>Total price : <%= (@booking.lama.price.to_i) * (@booking.end - @booking.start).to_i %>€</h2>
     <br>
     <h2>Enjoy your ride !</h2>
     <br>

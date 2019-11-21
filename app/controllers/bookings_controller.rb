@@ -33,6 +33,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+    @lama = Lama.find(params[:lama_id])
+    @user = current_user
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(status: "ok")
+    redirect_to user_bookings_path, notice: 'Booking is now confirmed.'
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
