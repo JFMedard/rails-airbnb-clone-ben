@@ -12,14 +12,18 @@
       <% end %>
         <div class="card-product-infos">
           <h2><%= booking.lama.title %></h2>
-          <p>From <strong><%= booking.start %></strong> to <strong><%= booking.end %></strong></p>
+          <p>From <strong><%= booking.start.strftime("%d %B %Y") %></strong> to <strong><%= booking.end.strftime("%d %B %Y") %></strong></p>
           <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
           <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
           <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
           <p>Status : <%= booking.status == "pending" ? "pending" : "validated" %></p>
         </div>
+        <% if booking.status != "pending" %>
+          <%= link_to "Leave a review", new_lama_review_path(booking.lama), class: 'btn btn-primary btn-block' %>
+        <% else %>
+        <% end %>
       </div>
-      <div class="card-booking-status text-center"><p>Booking status</p><i class="fas fa-hourglass-half fa-3x"></i></i></div>
+      <div class="card-booking-status text-center btn btn-primary"><p>Booking status</p><i class="btn btn-primary fas fa-hourglass-half fa-3x"></i></i></div>
     </div>
   <% end %>
 </div>
