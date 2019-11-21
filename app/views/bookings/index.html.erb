@@ -82,6 +82,7 @@
                   <h2 class="lama-title"><%= lama.title %></h2>
                 </div>
                 <p class="card-trip-pricing"><%= lama.price.to_i %>€/day</p>
+                <%= link_to "Delete lama", user_lama_path(@user, lama), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary btn-block' %>
               </div>
             </div>
           <% end %>

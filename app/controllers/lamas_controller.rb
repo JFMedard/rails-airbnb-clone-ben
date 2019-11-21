@@ -45,7 +45,6 @@ class LamasController < ApplicationController
     @booking = Booking.new
     @review = Review.new
     # authorize @lama
-
   end
 
   def edit
