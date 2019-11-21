@@ -1,6 +1,16 @@
 class LamasController < ApplicationController
   def index
-    @lamas = Lama.search(params[:search])
+    #@lamas = Lama.search(params[:search])
+    # @lamas = Lama.where.not(latitude: nil, longitude: nil)
+    @lamas = Lama.geocoded
+
+    @markers = @lamas.map do |lama|
+      {
+        lat: lama.latitude,
+        lng: lama.longitude,
+        infowindow: render_to_string(partial: "infowindow", locals: { lama: lama })
+      }
+    end
   end
 
   def new

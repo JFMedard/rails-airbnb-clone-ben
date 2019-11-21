@@ -19,6 +19,7 @@ gem 'pundit'
 gem 'cloudinary', '~> 1.12.0'
 gem 'effective_form_inputs'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
