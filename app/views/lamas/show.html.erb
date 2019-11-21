@@ -16,7 +16,7 @@
           <p><i class="fas fa-user-friends"></i> <%= @lama.capacity %> travellers</p>
           <p><i class="fas fa-map-marker-alt"></i> <%= @lama.address %></p>
         </div>
-        <h2><%= @lama.price %>€ / day</h2>
+        <h2><%= @lama.price.to_i %>€ / day</h2>
       </div>
     </div>
     <div class="form-booking bg-white col-4 border-rounded">

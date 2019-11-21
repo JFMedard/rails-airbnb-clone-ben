@@ -5,7 +5,7 @@
     <h1><strong>Lamas</strong> in <%= params[:search] %></h1>
   <% end %>
 
-  <h3>Result : <%= @lamas.count %> 🦙</h3>
+  <p>Result : <strong><%= @lamas.count %> 🦙</strong></p>
     <div class="main-container">
       <div class="cards">
         <% @lamas.each do |lama|  %>
@@ -18,9 +18,9 @@
               <% end %>
               <div class="card-body">
                 <div>
-                  <h2><%= lama.title %></h2>
+                  <h2 class="lama-title"><%= lama.title %></h2>
                 </div>
-                <h2 class="card-trip-pricing"><%= lama.price %>€/day</h2>
+                <p class="card-trip-pricing"><%= lama.price.to_i %>€/day</p>
               </div>
             </div>
           <% end %>
