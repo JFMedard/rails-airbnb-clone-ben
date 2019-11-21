@@ -2,10 +2,13 @@
   <% if params[:search] == nil %>
     <h1><strong>All lamas</strong></h1>
   <% else %>
-    <h1><strong>Lamas</strong> in <%= params[:search] %></h1>
+
+    <h1><strong>Lamas</strong> in <%= params[:search].split(",")[0] %>, <%= params[:search].split(",")[2] %></h1>
   <% end %>
 
-  <p>Result : <strong><%= @lamas.count %> 🦙</strong></p>
+
+  <h3>Result : <%= @lamas.length %> 🦙</h3>
+
     <div class="main-container">
       <div class="cards">
         <% @lamas.each do |lama|  %>
@@ -26,9 +29,13 @@
           <% end %>
         <% end %>
       </div>
-      <div class="map">
-        <img id="map" src='https://raw.githubusercontent.com/lewagon/layouts-demo/gh-pages/images/mapbox.png' style="height: 800px">
-      </div>
+      <div
+        id="map"
+        style="width: 100%;
+        height: 80vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
     </div>
   </div>
 </div>
