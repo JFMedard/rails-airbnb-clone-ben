@@ -63,7 +63,7 @@ class LamasController < ApplicationController
     @lama = Lama.find(params[:id])
     @lama.destroy
     # authorize @lama
-    redirect_to lamas_path(@lamas)
+    redirect_to user_bookings_path
   end
 
   private
