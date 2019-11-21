@@ -14,11 +14,11 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Rent your lama", new_lama_path, class: "nav-link" %>
+            <%= link_to "Rent your lama", new_lama_path, class: "nav-link nav-link-customized" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "All lamas", lamas_path, class: "nav-link" %>
+            <%= link_to "All lamas", lamas_path, class: "nav-link nav-link-customized" %>
           </li>
           <li class="nav-item">
             <%= link_to "Dashboard", user_bookings_path(current_user), class: "nav-link" %>
