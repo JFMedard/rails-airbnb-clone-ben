@@ -2,10 +2,11 @@
   <% if params[:search] == nil %>
     <h1><strong>All lamas</strong></h1>
   <% else %>
-    <h1><strong>Lamas</strong> in <%= params[:search] %></h1>
+
+    <h1><strong>Lamas</strong> in <%= params[:search].split(",")[0] %>, <%= params[:search].split(",")[2] %></h1>
   <% end %>
 
-  <h3>Result : <%= @lamas.count %> 🦙</h3>
+  <h3>Result : <%= @lamas.length %> 🦙</h3>
     <div class="main-container">
       <div class="cards">
         <% @lamas.each do |lama|  %>
@@ -29,7 +30,7 @@
       <div
         id="map"
         style="width: 100%;
-        height: 100vh;"
+        height: 80vh;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>

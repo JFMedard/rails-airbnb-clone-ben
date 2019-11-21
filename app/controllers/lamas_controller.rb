@@ -1,15 +1,25 @@
 class LamasController < ApplicationController
   def index
-    #@lamas = Lama.search(params[:search])
-    # @lamas = Lama.where.not(latitude: nil, longitude: nil)
-    @lamas = Lama.geocoded
-
-    @markers = @lamas.map do |lama|
-      {
-        lat: lama.latitude,
-        lng: lama.longitude,
-        infowindow: render_to_string(partial: "infowindow", locals: { lama: lama })
-      }
+    if Lama.near(params[:search], 200).present?
+      @lamas = Lama.near(params[:search], 200)
+      @markers = @lamas.map do |lama|
+        {
+          lat: lama.latitude,
+          lng: lama.longitude,
+          infowindow: render_to_string(partial: "infowindow", locals: { lama: lama }),
+          image_url: helpers.asset_url('https://cdn2.iconfinder.com/data/icons/animal-fill-icons-set/144/Alpaca-512.png')
+        }
+      end
+    else
+      @lamas = Lama.geocoded
+      @markers = @lamas.map do |lama|
+        {
+          lat: lama.latitude,
+          lng: lama.longitude,
+          infowindow: render_to_string(partial: "infowindow", locals: { lama: lama }),
+          image_url: helpers.asset_url('https://cdn2.iconfinder.com/data/icons/animal-fill-icons-set/144/Alpaca-512.png')
+        }
+      end
     end
   end
 
