@@ -25,5 +25,6 @@
       </div>
       <div class="card-booking-status text-center btn btn-primary"><p>Booking status</p><i class="btn btn-primary fas fa-hourglass-half fa-3x"></i></i></div>
     </div>
+    <%= link_to "Cancel booking", user_booking_path(@user, booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary btn-block' %>
   <% end %>
 </div>
