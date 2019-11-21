@@ -1,6 +1,7 @@
 <div class="container p-3">
-  <h1><strong>My bookings</strong></h1>
   <br>
+  <br>
+  <h2><strong>My bookings</strong></h2>
   <% @user = current_user %>
   <% @user.bookings.each do |booking| %>
     <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
@@ -23,7 +24,34 @@
         <% else %>
         <% end %>
       </div>
-      <div class="card-booking-status text-center btn btn-primary"><p>Booking status</p><i class="btn btn-primary fas fa-hourglass-half fa-3x"></i></i></div>
     </div>
+  <% end %>
+  <h2><strong>My lamas booked</strong></h2>
+  <% @user = current_user %>
+  <% @bookings.each do |booking| %>
+    <% if booking.lama.user_id == @user.id %>
+    <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
+      <div class="card-product my-4">
+      <% if booking.lama.photos.first %>
+        <%= cl_image_tag booking.lama.photos.first.key, crop: :fill %>
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80" class="card-img-top" alt="lama">
+      <% end %>
+        <div class="card-product-infos">
+          <h2><%= booking.lama.title %></h2>
+          <p>From <strong><%= booking.start.strftime("%d %B %Y") %></strong> to <strong><%= booking.end.strftime("%d %B %Y") %></strong></p>
+          <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
+          <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
+          <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
+          <p>Status : <%= booking.status == "pending" ? "pending" : "validated" %></p>
+        </div>
+        <% if booking.status == "pending" %>
+          <%= link_to "Booking pending", user_bookings_path(booking), class: 'btn btn-success' %>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
   <% end %>
 </div>

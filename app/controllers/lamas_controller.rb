@@ -1,6 +1,7 @@
 class LamasController < ApplicationController
   def index
     @lamas = Lama.search(params[:search])
+    @user = current_user
   end
 
   def new
