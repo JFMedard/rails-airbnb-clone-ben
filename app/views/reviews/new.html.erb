@@ -1,0 +1,11 @@
+<div class="form-registration">
+  <div class="form-group">
+    <h1>Review <%= @lama.title %> :</h1>
+      <%= simple_form_for [@lama, @review] do |f| %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :content %>
+        <%= f.submit class: 'btn btn-primary btn-block' %>
+      <% end %>
+  </div>
+</div>
+
