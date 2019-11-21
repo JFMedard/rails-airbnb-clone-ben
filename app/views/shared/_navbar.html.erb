@@ -21,7 +21,7 @@
             <%= link_to "All lamas", lamas_path, class: "nav-link nav-link-customized" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Dashboard", user_bookings_path(current_user), class: "nav-link" %>
+            <%= link_to "Dashboard", user_bookings_path(current_user), class: "nav-link nav-link-customized" %>
           </li>
           <li class="nav-item dropdown">
             <% if current_user.photo.attached? %>

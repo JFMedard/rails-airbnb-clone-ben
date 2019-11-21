@@ -1,76 +1,96 @@
-<div class="container p-3">
+<div class="container">
   <br>
   <br>
-
-  <% @user = current_user %>
-  <% unless @user.bookings.count == 0 %>
-  <h2>My upcoming bookings</h2>
-  <% @user.bookings.each do |booking| %>
-    <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
-      <div class="card-product my-4">
-      <% if booking.lama.photos.first %>
-        <%= cl_image_tag booking.lama.photos.first.key, crop: :fill %>
-      <% else %>
-        <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80" class="card-img-top" alt="lama">
-      <% end %>
-        <div class="card-product-infos">
-          <h2><%= booking.lama.title %></h2>
-          <p>From <strong><%= booking.start.strftime("%d %B %Y") %></strong> to <strong><%= booking.end.strftime("%d %B %Y") %></strong></p>
-          <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
-          <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
-          <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
-          <p>Status : <%= booking.status == "pending" ? "pending" : "validated" %></p>
-        </div>
-        <% if booking.status != "pending" %>
-          <%= link_to "Leave a review", new_lama_review_path(booking.lama), class: 'btn btn-primary btn-block' %>
+  <br>
+<div class="bookings">
+<div class="row">
+  <div class="col-8">
+    <% @user = current_user %>
+    <% unless @user.bookings.count == 0 %>
+    <h2>My upcoming bookings</h2>
+    <% @user.bookings.each do |booking| %>
+      <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
+        <div class="card-product my-4">
+        <% if booking.lama.photos.first %>
+          <%= cl_image_tag booking.lama.photos.first.key, crop: :fill %>
         <% else %>
+          <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80" class="card-img-top" alt="lama">
+        <% end %>
+          <div class="card-product-infos">
+            <h2><%= booking.lama.title %></h2>
+            <p>From <strong><%= booking.start.strftime("%d %B %Y") %></strong> to <strong><%= booking.end.strftime("%d %B %Y") %></strong></p>
+            <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
+            <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
+            <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
+            <p>Status : <%= booking.status == "pending" ? "pending" : "validated" %></p>
+          </div>
+          <% if booking.status != "pending" %>
+            <%= link_to "Leave a review", new_lama_review_path(booking.lama), class: 'btn btn-primary btn-block' %>
+          <% else %>
+          <% end %>
+        </div>
+      </div>
+      <%= link_to "Cancel booking", user_booking_path(@user, booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary btn-block' %>
+    <% end %>
+    <% end %>
+
+    <% @user = current_user %>
+    <h2>Upcoming bookings for my lamas.</h2>
+    <% @bookings.each do |booking| %>
+      <% if booking.lama.user_id == @user.id %>
+      <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
+        <div class="card-product my-4">
+        <% if booking.lama.photos.first %>
+          <%= cl_image_tag booking.lama.photos.first.key, crop: :fill %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80" class="card-img-top" alt="lama">
+        <% end %>
+          <div class="card-product-infos">
+            <h2><%= booking.lama.title %></h2>
+            <p>From <strong><%= booking.start %></strong> to <strong><%= booking.end %></strong></p>
+            <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
+            <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
+            <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
+
+          </div>
+          <% if booking.status == "pending" %>
+            <%= link_to "Validate", user_booking_path(@user, booking), method: :patch, class: 'btn btn-success' %>
+          <% else %>
+            <%= link_to "Confirmed", "#", class: 'btn btn-success float-right' %>
+          <% end %>
+        </div>
+      </div>
+      <% else %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+  <div class="col-3">
+
+    <h2>My own lamas</h2>
+    <div class="cards">
+        <% @lamas.each do |lama|  %>
+          <%= link_to lama_path(lama) do %>
+            <div class="card">
+              <% if lama.photos.first %>
+                <%= cl_image_tag lama.photos.first.key, crop: :fill, class: "card-img-top"%>
+              <% else %>
+                <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80" class="card-img-top" alt="lama">
+              <% end %>
+              <div class="card-body">
+                <div>
+                  <h2 class="lama-title"><%= lama.title %></h2>
+                </div>
+                <p class="card-trip-pricing"><%= lama.price.to_i %>€/day</p>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
-    <%= link_to "Cancel booking", user_booking_path(@user, booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary btn-block' %>
-  <% end %>
-  <% end %>
-  
-  <% @user = current_user %>
-  <h2>Upcoming bookings for my lamas.</h2>
-  <% @bookings.each do |booking| %>
-    <% if booking.lama.user_id == @user.id %>
-    <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
-      <div class="card-product my-4">
-      <% if booking.lama.photos.first %>
-        <%= cl_image_tag booking.lama.photos.first.key, crop: :fill %>
-      <% else %>
-        <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80" class="card-img-top" alt="lama">
-      <% end %>
-        <div class="card-product-infos">
-          <h2><%= booking.lama.title %></h2>
-          <p>From <strong><%= booking.start %></strong> to <strong><%= booking.end %></strong></p>
-          <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
-          <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
-          <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
-
-        </div>
-        <% if booking.status == "pending" %>
-          <%= link_to "Validate", user_booking_path(@user, booking), method: :patch, class: 'btn btn-success' %>
-        <% else %>
-          <%= link_to "Confirmed", "#", class: 'btn btn-success float-right' %>
-        <% end %>
-      </div>
     </div>
-    <% else %>
-    <% end %>
-  <% end %>
+  </div>
 
-  <h2><strong>My own lamas</strong></h2>
-  <% @lamas.each do |lama| %>
-  <% @user = current_user %>
-    <% if lama.user_id == @user.id %>
-      <% if lama.photos.first %>
-        <%= cl_image_tag lama.photos.first.key, crop: :fill %><h2><%= lama.title %></h2>
-      <% else %>
-        <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80" class="card-img-top" alt="lama"><h2><%= lama.title %></h2>
-      <% end %>
-    <% else %>
-    <% end %>
-  <% end %>
-</div>
+
+
+
