@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
   def new
     @lama = Lama.find(params[:lama_id])
     @booking = Booking.new
+    @user = current_user
     # authorize @booking
   end
 
@@ -19,11 +20,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @lama = Lama.find(params[:lama_id])
     @user = current_user
+    @status = "pending"
     # authorize @booking
     @booking.user = @user
     @booking.lama = @lama
+    @booking.status = @status
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to user_booking_path(@user, @booking)
     else
       render "lamas/show"
     end

@@ -1,7 +1,8 @@
 <div class="container p-3">
   <h1><strong>My bookings</strong></h1>
   <br>
-  <% @bookings.each do |booking| %>
+  <% @user = current_user %>
+  <% @user.bookings.each do |booking| %>
     <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
       <div class="card-product my-4">
       <% if booking.lama.photos.first %>
@@ -15,11 +16,12 @@
           <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
           <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
           <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
-          <% if booking.status != "pending" %>
-          <%= link_to "Leave a review", new_lama_review_path(booking.lama), class: 'btn btn-primary btn-block' %>
-          <% else %>
-          <% end %>
+          <p>Status : <%= booking.status == "pending" ? "pending" : "validated" %></p>
         </div>
+        <% if booking.status != "pending" %>
+          <%= link_to "Leave a review", new_lama_review_path(booking.lama), class: 'btn btn-primary btn-block' %>
+        <% else %>
+        <% end %>
       </div>
       <div class="card-booking-status text-center btn btn-primary"><p>Booking status</p><i class="btn btn-primary fas fa-hourglass-half fa-3x"></i></i></div>
     </div>
