@@ -66,7 +66,7 @@ lama1 = Lama.new(
   driver: true,
   created_at: "2019-11-17 [11:22:33]",
   updated_at: "2019-11-18 [11:45:33]",
-  user: user2
+  user_id: 11
 )
 lama1.photos.attach(io: file1, filename: 'shallow-focus-photography-of-brown-llama-1300358_qmjqy5.jpg', content_type: 'image/jpg')
 lama1.photos.attach(io: file2, filename: 'shallow-focus-photography-of-brown-llama-1300364_witstd.jpg', content_type: 'image/jpg')
@@ -87,7 +87,7 @@ lama2 = Lama.new(
   driver: true,
   created_at: "2019-11-17 [11:22:33]",
   updated_at: "2019-11-18 [11:45:33]",
-  user: user1
+  user_id: 10
 )
 lama2.photos.attach(io: file1, filename: 'tgsLijr9puCwpDmzjSi6im7P.jpg', content_type: 'image/jpg')
 lama2.photos.attach(io: file2, filename: 'Fbe7Kn3ssUKoSzhEASjwo9AA.jpg', content_type: 'image/jpg')
@@ -108,7 +108,7 @@ lama3 = Lama.new(
   driver: true,
   created_at: "2019-11-17 [11:22:33]",
   updated_at: "2019-11-18 [11:45:33]",
-  user: user3
+  user_id: 12
 )
 lama3.photos.attach(io: file1, filename: '65EotM4U1kdZmUWdH4zt87uL.png', content_type: 'image/png')
 lama3.photos.attach(io: file2, filename: 'VziPoRGrhdkuiKedCezDErJC.jpg', content_type: 'image/jpg')
@@ -129,7 +129,7 @@ lama4 = Lama.new(
   driver: nil,
   created_at: "2019-11-20 [13:52:52]",
   updated_at: "2019-11-20 [13:52:52]",
-  user: user3
+  user_id: 12
 )
 lama4.photos.attach(io: file1, filename: '7gTBjFs27aLCTaHTyqbm9aW2.jpg', content_type: 'image/jpg')
 lama4.photos.attach(io: file2, filename: 'YzAbTuzPZ31dMNHdA3sR2Vuh.jpg', content_type: 'image/jpg')
@@ -150,7 +150,7 @@ lama5 = Lama.new(
   driver: true,
   created_at: "2019-11-20 [13:53:51]",
   updated_at: "2019-11-20 [13:53:51]",
-  user: user2
+  user_id: 11
 )
 lama5.photos.attach(io: file1, filename: 'some-image.jpg', content_type: 'image/jpg')
 lama5.photos.attach(io: file2, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -171,7 +171,7 @@ lama6 = Lama.new(
   driver: true,
   created_at: "2019-11-20 [13:57:27]",
   updated_at: "2019-11-20 [13:57:27]",
-  user: user2
+  user_id: 11
 )
 lama6.photos.attach(io: file1, filename: 'grayscale-photo-of-llama-1422605_sprybt.jpg', content_type: 'image/jpg')
 lama6.photos.attach(io: file2, filename: 'photo-of-a-llama-1578484_eqlmj2.jpg', content_type: 'image/jpg')
@@ -192,7 +192,7 @@ lama7 = Lama.new(
   driver: nil,
   created_at: "2019-11-20 [14:06:34]",
   updated_at: "2019-11-20 [14:06:34]",
-  user: user1
+  user_id: 10
 )
 lama7.photos.attach(io: file1, filename: 'xFzwSGx66SS6Qz7ovGUBf1zq.jpg', content_type: 'image/jpg')
 lama7.photos.attach(io: file2, filename: 'TkRP4Y3TQAsJo71xHAuj18pd.jpg', content_type: 'image/jpg')
@@ -213,7 +213,7 @@ lama8 = Lama.new(
   driver: true,
   created_at: "2019-11-20 [14:17:47]",
   updated_at: "2019-11-20 [14:17:47]",
-  user: user1
+  user_id: 10
 )
 lama8.photos.attach(io: file1, filename: 'animal-zoo-chill-lama-96894_lgteit.jpg', content_type: 'image/jpg')
 lama8.photos.attach(io: file2, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -234,7 +234,7 @@ lama9 = Lama.new(
   driver: true,
   created_at: "2019-11-20 [14:28:36]",
   updated_at: "2019-11-20 [14:28:36]",
-  user: user3
+  user_id: 12
 )
 lama9.photos.attach(io: file1, filename: 'KStDYros9RW1DpyFHMjZ7Gf2.jpg', content_type: 'image/jpg')
 lama9.photos.attach(io: file2, filename: 'KQWgTeZW4Tdz5m68cyZcSSPe.jpg', content_type: 'image/jpg')
@@ -255,7 +255,7 @@ lama10 = Lama.new(
   driver: nil,
   created_at: "2019-11-20 [15:41:36]",
   updated_at: "2019-11-20 [15:41:36]",
-  user: user3
+  user_id: 12
 )
 lama10.photos.attach(io: file1, filename: 'shallow-focus-photography-of-brown-and-black-animal-594399_agohtg.jpg', content_type: 'image/jpg')
 lama10.photos.attach(io: file2, filename: '2zSjsx39eTisRzHxVJX2GwnR.jpg', content_type: 'image/jpg')
@@ -276,7 +276,7 @@ lama11 = Lama.new(
   driver: nil,
   created_at: "2019-11-20 [15:42:59]",
   updated_at: "2019-11-20 [15:42:59]",
-  user: user3
+  user_id: 12
 )
 lama11.photos.attach(io: file1, filename: 'animal-animal-photography-animal-world-blur-277218_mxrrar.jpg', content_type: 'image/jpg')
 lama11.photos.attach(io: file2, filename: 'white-and-brown-llama-2253639_kcxup2.jpg', content_type: 'image/jpg')
