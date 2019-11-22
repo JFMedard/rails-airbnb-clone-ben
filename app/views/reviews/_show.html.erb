@@ -1,0 +1,6 @@
+<div id="reviews">
+<h1>Reviews for <%= @lama.title %></h1>
+    <% @reviews.each do |review|  %>
+      <p><%= review.content %></p>
+    <% end %>
+    </div>
