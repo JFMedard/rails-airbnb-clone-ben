@@ -43,10 +43,9 @@
     </div>
   </div>
   <div class="lama-description">
-  <h2>Review for <%= @lama.title %></h2>
-  <% @review.each do |review|  %>
-    <p><%= review.content %></p>
-  <% end %>
+    <%= render 'reviews/show', lama: @lama, review: @reviews %>
+
+     <%= render 'reviews/form', lama: @lama, review: @review %>
   </div>
 </div>
 
