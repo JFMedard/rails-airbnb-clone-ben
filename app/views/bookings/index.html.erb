@@ -65,7 +65,7 @@
             </div>
           </div>
 
-       
+
         <% end %>
 
       <% end %></section>
@@ -76,26 +76,26 @@
           <% @bookings.each do |booking| %>
             <% if booking.lama.user_id == @user.id %>
             <div class="booking-card d-flex justify-content-between align-items-center bd-highlight">
-              <div class="card-product my-4">
+              <div class="card-product col-8 p-0 ml-5 my-3">
               <% if booking.lama.photos.first %>
                 <%= cl_image_tag booking.lama.photos.first.key, crop: :fill %>
               <% else %>
                 <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80" class="card-img-top" alt="lama">
               <% end %>
-                <div class="card-product-infos">
-                  <h2><%= booking.lama.title %></h2>
-                  <p>From <strong><%= booking.start %></strong> to <strong><%= booking.end %></strong></p>
-                  <p>Total price : <strong><%= booking.lama.price %>€</strong></p>
-                  <p>For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
-                  <p><%= booking.driver_manager ? "✅ driver" : "❌ driver" %></p>
-
+                <div class="card-product-infos py-3 pl-3 pr-5">
+                  <p><i class="fas fa-calendar-alt"></i> From <strong><%= booking.start.strftime("%b %d") %></strong> to <strong><%= booking.end.strftime("%b %d") %></strong></p>
+                  <p><i class="fas fa-euro-sign"></i> Total price : <strong><%= booking.lama.price.to_i %>€</strong></p>
+                  <p><i class="fas fa-user-friends"></i> For : <strong><%= booking.number_of_users %></strong> <%= booking.number_of_users == 1 ? "traveller" : "travellers" %></p>
+                  <p><i class="fas fa-map-signs"></i> <%= booking.driver_manager ? "With a driver" : "No driver" %></p>
                 </div>
-                <% if booking.status == "pending" %>
-                  <%= link_to "Validate", user_booking_path(@user, booking), method: :patch, class: 'btn btn-success' %>
-                <% else %>
-                  <%= link_to "Confirmed", "#", class: 'btn btn-primary float-right' %>
-                <% end %>
               </div>
+                <div class="button-validation">
+                  <% if booking.status == "pending" %>
+                    <%= link_to "Validate", user_booking_path(@user, booking), method: :patch, class: 'btn btn-success' %>
+                  <% else %>
+                    <%= link_to "Confirmed 👍", "#", class: 'btn btn-primary float-right' %>
+                  <% end %>
+                </div>
             </div>
             <% else %>
             <% end %>
@@ -103,25 +103,22 @@
         <section>
 
           <h2>My lamas</h2>
-            <div class="col-6">
+            <div class="col-8">
               <h2>My own lamas</h2>
                 <% @user = current_user %>
                   <% @lamas.each do |lama|  %>
                   <div data-restaurant-id='<%= lama.id %>'>
                     <%= link_to lama_path(lama) do %>
-                      <div class="lama-list d-flex justify-content-between">
-                        <div class="lama-avatar">
+                      <div class="lama-list d-flex p-3 align-items-center">
+                        <div class="lama-avatar col-8 ml-4">
                           <% if lama.photos.first %>
-                            <%= cl_image_tag lama.photos.first.key, crop: :fill, class: "avatar-square", height: 50, width: 50, alt: "avatar-square"%>
+                            <%= cl_image_tag lama.photos.first.key, crop: :fill, class: "avatar-lama", height: 80, width: 80, alt: "avatar-lama"%>
                           <% else %>
-                            <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80", class= "avatar-square", height= 50, width= 50, alt= "avatar-square">
+                            <img src="https://images.unsplash.com/photo-1546273703-d2658be9de64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80", class= "avatar-lama", height= 80, width= 80, alt= "avatar-lama">
                           <% end %>
                         </div>
                         <div class="lama-infos-small">
-                          <p><%= lama.title %></p>
-                          <%= link_to user_lama_path(@user, lama), method: :delete, remote: true, data: { confirm: "Are you sure?" } do %>
-                            <i class="fas fa-trash-alt"></i>
-                          <% end %>
+                          <p><strong><%= lama.title %></strong> <%= link_to '<i class="fas fa-trash-alt" style="color:grey;"></i>'.html_safe, user_lama_path(@user, lama), method: :delete, remote: true, data: { confirm: "Are you sure?" } %></p>
                         </div>
                       </div>
                     <% end %>
