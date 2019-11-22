@@ -43,7 +43,8 @@ class LamasController < ApplicationController
   def show
     @lama = Lama.find(params[:id])
     @booking = Booking.new
-    @review = Review.where(lama_id: @lama.id)
+    @reviews = Review.where(lama_id: @lama.id)
+    @review = Review.new
     # authorize @lama
   end
 
@@ -63,7 +64,7 @@ class LamasController < ApplicationController
     @lama = Lama.find(params[:id])
     @lama.destroy
     # authorize @lama
-    redirect_to user_bookings_path
+
   end
 
   private

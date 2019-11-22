@@ -5,7 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 
 .card-product img {
@@ -21,23 +21,36 @@
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
-  padding: 30px;
+.card-booking-infos {
+  border-right: 1px solid lightgrey;
+  padding: 8px;
+  width: 20%;
+  text-align: center;
+  height: 120px;
+
+  i {
+    color: $pink;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
 }
 
-.card-booking-status {
-  height: 160px;
-  width: 10%;
-  margin-left: 10px;
-  background-color: orange;
-  border-radius: 3px;
+.cancel-booking .write-review {
+  background-color: white;
+  border-radius: 50%;
+  // bottom: 250px;
+}
+
+.user-actions {
+  margin: 5px;
+  margin-right: 15px;
 }
 
 .card-booking-status p {
