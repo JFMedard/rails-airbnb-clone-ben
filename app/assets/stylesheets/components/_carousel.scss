@@ -1,3 +1,4 @@
+
 .card-lama {
   background-size: cover;
   background-position: top;
@@ -14,7 +15,8 @@
 }
 
 .carousel-item img{
-  width: 100%;
+  // width: 100%;
+  width: 650px;
   height: 350px;
   object-fit: cover;
   object-position: top;
@@ -25,5 +27,27 @@
   margin-top: 40px;
 }
 
+#carousselExampleFade{
+  width: 650px;
+}
+.info{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
 
-
+  text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em white;
+    h1{
+      color: white;
+      padding: 20px;
+    }
+  .name{
+  align-self: flex-start;
+  }
+  .price{
+    align-self: flex-end;
+  }
+}

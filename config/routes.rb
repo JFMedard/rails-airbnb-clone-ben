@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :lamas do
     resources :bookings, only: [:new, :create]
-    resources :reviews, only: [:new, :create, :destroy]
+    resources :reviews, only: [:new, :create, :destroy, :index, :show]
   end
   resources :users do
     resources :bookings, only: [:index, :show, :destroy, :edit, :update]
