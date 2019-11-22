@@ -1,6 +1,6 @@
 <br>
 <br>
-<div class="container">
+<div class="container mb-4">
   <h1><strong>My Dashboard</strong></h1>
 <br>
 <div class="tabs">
@@ -54,7 +54,7 @@
               <div class="user-actions d-flex flex-column">
                 <div class="write-review">
                   <% if booking.status != "pending" %>
-                    <%= link_to '<i class="fas fa-feather-alt" style="color:grey;"></i>'.html_safe, new_lama_review_path(booking.lama) %>
+                    <%= link_to '<i class="fas fa-feather-alt" style="color:grey;"></i>'.html_safe, lama_path(booking.lama) %>
                   <% else %>
                   <% end %>
                 </div>
@@ -63,7 +63,7 @@
                 </div>
               </div>
             </div>
-          </div>       
+          </div>
         <% end %>
       <% end %></section>
         <section>

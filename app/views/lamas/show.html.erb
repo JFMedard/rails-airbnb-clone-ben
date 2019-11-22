@@ -26,7 +26,7 @@
       </div>
       <div class="col-4">
         <!-- <p>todo form</p> -->
-        <div class="form-booking bg-white border-rounded">
+        <div class="form-booking bg-white border-rounded pt-2">
           <div class="form-group">
             <h1>Book me :</h1>
             <%= simple_form_for [@lama, @booking] do |f| %>
@@ -39,7 +39,7 @@
                <!-- collection: 1..(@lama.capacity)  -->
                 <div class="plus-button">+</div>
               </div>
-
+              <br>
               <%= f.input :driver_manager, :label => "I need a driver" %>
               <h4><%= @booking["end"] %></h4>
               <div class="form-actions">
@@ -55,15 +55,14 @@
 
 
 
-  <div class="lama-description">
-
+  <div class="lama-description bg-white">
      <%= render 'reviews/show', lama: @lama, review: @reviews %>
   <div class="form-registration">
-    <div class="form-group">
-    <h1>Leave a review</h1>
-     <%= render 'reviews/form', lama: @lama, review: @review %>
-   </div>
- </div>
+      <div class="form-group">
+      <h1>Leave a review</h1>
+       <%= render 'reviews/form', lama: @lama, review: @review %>
+     </div>
+  </div>
   </div>
 </div>
 
