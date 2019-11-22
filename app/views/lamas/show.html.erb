@@ -10,7 +10,7 @@
         <!-- <p>TODO Desciption</p> -->
         <div class="lama-details d-flex justify-content-between">
           <div class="lama-description bg-white my-4 border-rounded">
-              <div class="lama-name mb-5">
+              <div class="lama-name">
                 <!-- <h1><%= @lama.title %></h1> -->
                 <p><%= @lama.description %></p>
               </div>
@@ -52,32 +52,9 @@
     </div>
 
 
-   
 
-<div class="row">
-    <div class="form-booking bg-white col-12 border-rounded">
-      <div class="form-group">
-        <h1>Book me :</h1>
-        <%= simple_form_for [@lama, @booking] do |f| %>
-          <%= f.input :start, :label => "From", as: :string, required: false, input_html: { id: "range_start" } %>
-          <%= f.input :end, :label => "Until", as: :string, required: false, input_html: { id: "range_end" } %>
-          <div>Number of riders on the lama</div>
-          <div class="riders-number">
-            <div class="less-button">-</div>
-           <%= f.input :number_of_users, label: false, input_html: {max: @lama.capacity, value: 0} %>
-           <!-- collection: 1..(@lama.capacity)  -->
-           <div class="plus-button">+</div>
-          </div>
-          <br>
-          <%= f.input :driver_manager, :label => "I need a driver" %>
-          <h4><%= @booking["end"] %></h4>
-          <div class="form-actions">
-          <%= f.button :submit, "Book #{@lama.title}", class: 'btn btn-primary btn-block' %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+
+
   <div class="lama-description">
 
      <%= render 'reviews/show', lama: @lama, review: @reviews %>
