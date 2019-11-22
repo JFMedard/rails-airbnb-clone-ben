@@ -22,7 +22,7 @@
       <% unless @user.bookings.count == 0 %>
         <h2>My upcoming bookings</h2>
         <% @user.bookings.each do |booking| %>
-          <div class="booking-card d-flex justify-content-between align-items-center bd-highlight data-restaurant-id="<%= booking.id">
+          <div class="booking-card d-flex justify-content-between align-items-center bd-highlight" data-restaurant-id="<%= booking.id%>">
             <div class="card-product my-4">
               <% if booking.lama.photos.first %>
                 <%= cl_image_tag booking.lama.photos.first.key, crop: :fill %>
@@ -90,7 +90,7 @@
                 <% if booking.status == "pending" %>
                   <%= link_to "Validate", user_booking_path(@user, booking), method: :patch, class: 'btn btn-success' %>
                 <% else %>
-                  <%= link_to "Confirmed", "#", class: 'btn btn-success float-right' %>
+                  <%= link_to "Confirmed", "#", class: 'btn btn-primary float-right' %>
                 <% end %>
               </div>
             </div>
