@@ -8,8 +8,8 @@
 
 # file = URI.open('https://meme.eq8.eu/noidea.jpg')
 # lama = Lama.new(title: 'NES', body: "A great console")
-# lama.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+# lama.photos.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# # Here we write article.photos.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 # article.save
 
 
@@ -68,9 +68,9 @@ lama1 = Lama.new(
   updated_at: "2019-11-18 [11:45:33]",
   user: user2
 )
-lama1.photo.attach(io: file1, filename: 'shallow-focus-photography-of-brown-llama-1300358_qmjqy5.jpg', content_type: 'image/jpg')
-lama1.photo.attach(io: file2, filename: 'shallow-focus-photography-of-brown-llama-1300364_witstd.jpg', content_type: 'image/jpg')
-lama1.photo.attach(io: file3, filename: 'CEeSQyzP4mLgoLf6KY2vMF6D.jpg', content_type: 'image/jpg')
+lama1.photos.attach(io: file1, filename: 'shallow-focus-photography-of-brown-llama-1300358_qmjqy5.jpg', content_type: 'image/jpg')
+lama1.photos.attach(io: file2, filename: 'shallow-focus-photography-of-brown-llama-1300364_witstd.jpg', content_type: 'image/jpg')
+lama1.photos.attach(io: file3, filename: 'CEeSQyzP4mLgoLf6KY2vMF6D.jpg', content_type: 'image/jpg')
 lama1.save
 puts 'lama1 created!'
 
@@ -89,9 +89,9 @@ lama2 = Lama.new(
   updated_at: "2019-11-18 [11:45:33]",
   user: user1
 )
-lama2.photo.attach(io: file1, filename: 'tgsLijr9puCwpDmzjSi6im7P.jpg', content_type: 'image/jpg')
-lama2.photo.attach(io: file2, filename: 'Fbe7Kn3ssUKoSzhEASjwo9AA.jpg', content_type: 'image/jpg')
-lama2.photo.attach(io: file3, filename: '8GeGvzEL2orGHTSmgWXDbRCe.jpg', content_type: 'image/jpg')
+lama2.photos.attach(io: file1, filename: 'tgsLijr9puCwpDmzjSi6im7P.jpg', content_type: 'image/jpg')
+lama2.photos.attach(io: file2, filename: 'Fbe7Kn3ssUKoSzhEASjwo9AA.jpg', content_type: 'image/jpg')
+lama2.photos.attach(io: file3, filename: '8GeGvzEL2orGHTSmgWXDbRCe.jpg', content_type: 'image/jpg')
 lama2.save
 puts 'lama2 created!'
 
@@ -110,9 +110,9 @@ lama3 = Lama.new(
   updated_at: "2019-11-18 [11:45:33]",
   user: user3
 )
-lama3.photo.attach(io: file1, filename: '65EotM4U1kdZmUWdH4zt87uL.png', content_type: 'image/png')
-lama3.photo.attach(io: file2, filename: 'VziPoRGrhdkuiKedCezDErJC.jpg', content_type: 'image/jpg')
-lama3.photo.attach(io: file3, filename: 'LD86G7LdZCFuUoyGKar5YVgD.jpg', content_type: 'image/jpg')
+lama3.photos.attach(io: file1, filename: '65EotM4U1kdZmUWdH4zt87uL.png', content_type: 'image/png')
+lama3.photos.attach(io: file2, filename: 'VziPoRGrhdkuiKedCezDErJC.jpg', content_type: 'image/jpg')
+lama3.photos.attach(io: file3, filename: 'LD86G7LdZCFuUoyGKar5YVgD.jpg', content_type: 'image/jpg')
 lama3.save
 puts 'lama3 created!'
 
@@ -131,9 +131,9 @@ lama4 = Lama.new(
   updated_at: "2019-11-20 [13:52:52]",
   user: user3
 )
-lama4.photo.attach(io: file1, filename: '7gTBjFs27aLCTaHTyqbm9aW2.jpg', content_type: 'image/jpg')
-lama4.photo.attach(io: file2, filename: 'YzAbTuzPZ31dMNHdA3sR2Vuh.jpg', content_type: 'image/jpg')
-lama4.photo.attach(io: file3, filename: 'QgArB33KAqimUZkA9MPJmpyT.jpg', content_type: 'image/jpg')
+lama4.photos.attach(io: file1, filename: '7gTBjFs27aLCTaHTyqbm9aW2.jpg', content_type: 'image/jpg')
+lama4.photos.attach(io: file2, filename: 'YzAbTuzPZ31dMNHdA3sR2Vuh.jpg', content_type: 'image/jpg')
+lama4.photos.attach(io: file3, filename: 'QgArB33KAqimUZkA9MPJmpyT.jpg', content_type: 'image/jpg')
 lama4.save
 puts 'lama4 created!'
 
@@ -152,9 +152,9 @@ lama5 = Lama.new(
   updated_at: "2019-11-20 [13:53:51]",
   user: user2
 )
-lama5.photo.attach(io: file1, filename: 'some-image.jpg', content_type: 'image/jpg')
-lama5.photo.attach(io: file2, filename: 'some-image.jpg', content_type: 'image/jpg')
-lama5.photo.attach(io: file3, filename: 'some-image.jpg', content_type: 'image/jpg')
+lama5.photos.attach(io: file1, filename: 'some-image.jpg', content_type: 'image/jpg')
+lama5.photos.attach(io: file2, filename: 'some-image.jpg', content_type: 'image/jpg')
+lama5.photos.attach(io: file3, filename: 'some-image.jpg', content_type: 'image/jpg')
 lama5.save
 puts 'lama5 created!'
 
@@ -173,9 +173,9 @@ lama6 = Lama.new(
   updated_at: "2019-11-20 [13:57:27]",
   user: user2
 )
-lama6.photo.attach(io: file1, filename: 'grayscale-photo-of-llama-1422605_sprybt.jpg', content_type: 'image/jpg')
-lama6.photo.attach(io: file2, filename: 'photo-of-a-llama-1578484_eqlmj2.jpg', content_type: 'image/jpg')
-lama6.photo.attach(io: file3, filename: 'animals-blur-close-up-domestic-133387_ot4b4z.jpg', content_type: 'image/jpg')
+lama6.photos.attach(io: file1, filename: 'grayscale-photo-of-llama-1422605_sprybt.jpg', content_type: 'image/jpg')
+lama6.photos.attach(io: file2, filename: 'photo-of-a-llama-1578484_eqlmj2.jpg', content_type: 'image/jpg')
+lama6.photos.attach(io: file3, filename: 'animals-blur-close-up-domestic-133387_ot4b4z.jpg', content_type: 'image/jpg')
 lama6.save
 puts 'lama6 created!'
 
@@ -194,15 +194,15 @@ lama7 = Lama.new(
   updated_at: "2019-11-20 [14:06:34]",
   user: user1
 )
-lama7.photo.attach(io: file1, filename: 'xFzwSGx66SS6Qz7ovGUBf1zq.jpg', content_type: 'image/jpg')
-lama7.photo.attach(io: file2, filename: 'TkRP4Y3TQAsJo71xHAuj18pd.jpg', content_type: 'image/jpg')
-lama7.photo.attach(io: file3, filename: 'KjfSf7wFbvhv3sEWwtMmYSva.jpg', content_type: 'image/jpg')
+lama7.photos.attach(io: file1, filename: 'xFzwSGx66SS6Qz7ovGUBf1zq.jpg', content_type: 'image/jpg')
+lama7.photos.attach(io: file2, filename: 'TkRP4Y3TQAsJo71xHAuj18pd.jpg', content_type: 'image/jpg')
+lama7.photos.attach(io: file3, filename: 'KjfSf7wFbvhv3sEWwtMmYSva.jpg', content_type: 'image/jpg')
 lama7.save
 puts 'lama7 created!'
 
-file1 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574259465/8Q1ofpgXeG8GDj7a1UiEWkCh.jpg')
-file2 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574259466/9diM2z4u3UvPuenPk6eAtfXJ.jpg')
-file3 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574259467/SwVsMm1251yjKWyRwpKZyNUv.jpg')
+file1 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574431564/animal-zoo-chill-lama-96894_lgteit.jpg')
+file2 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574260637/tgsLijr9puCwpDmzjSi6im7P.jpg')
+file3 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574260112/j9edv8VZqV4qdKobmn44at9J.jpg')
 lama8 = Lama.new(
   title: "ラマ",
   description: "酒草を食べるニポンラマ",
@@ -215,9 +215,9 @@ lama8 = Lama.new(
   updated_at: "2019-11-20 [14:17:47]",
   user: user1
 )
-lama8.photo.attach(io: file1, filename: '8Q1ofpgXeG8GDj7a1UiEWkCh.jpg', content_type: 'image/jpg')
-lama8.photo.attach(io: file2, filename: '9diM2z4u3UvPuenPk6eAtfXJ.jpg', content_type: 'image/jpg')
-lama8.photo.attach(io: file3, filename: 'SwVsMm1251yjKWyRwpKZyNUv.jpg', content_type: 'image/jpg')
+lama8.photos.attach(io: file1, filename: 'animal-zoo-chill-lama-96894_lgteit.jpg', content_type: 'image/jpg')
+lama8.photos.attach(io: file2, filename: 'some-image.jpg', content_type: 'image/jpg')
+lama8.photos.attach(io: file3, filename: 'SwVsMm1251yjKWyRwpKZyNUv.jpg', content_type: 'image/jpg')
 lama8.save
 puts 'lama8 created!'
 
@@ -236,13 +236,13 @@ lama9 = Lama.new(
   updated_at: "2019-11-20 [14:28:36]",
   user: user3
 )
-lama9.photo.attach(io: file1, filename: 'KStDYros9RW1DpyFHMjZ7Gf2.jpg', content_type: 'image/jpg')
-lama9.photo.attach(io: file2, filename: 'KQWgTeZW4Tdz5m68cyZcSSPe.jpg', content_type: 'image/jpg')
-lama9.photo.attach(io: file3, filename: 'photo-1511885663737-eea53f6d6187_1_uiz6qk.jpg', content_type: 'image/jpg')
+lama9.photos.attach(io: file1, filename: 'KStDYros9RW1DpyFHMjZ7Gf2.jpg', content_type: 'image/jpg')
+lama9.photos.attach(io: file2, filename: 'KQWgTeZW4Tdz5m68cyZcSSPe.jpg', content_type: 'image/jpg')
+lama9.photos.attach(io: file3, filename: 'photo-1511885663737-eea53f6d6187_1_uiz6qk.jpg', content_type: 'image/jpg')
 lama9.save
 puts 'lama9 created!'
 
-file1 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574244404/CX14R4buQvLEhuLJFmCA1XZk.jpg')
+file1 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574431135/shallow-focus-photography-of-brown-and-black-animal-594399_agohtg.jpg')
 file2 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574258790/2zSjsx39eTisRzHxVJX2GwnR.jpg')
 file3 = URI.open('https://res.cloudinary.com/dq24zunln/image/upload/v1574259299/17z6fRwMn95oWoivP9wBQimS.jpg')
 lama10 = Lama.new(
@@ -257,9 +257,9 @@ lama10 = Lama.new(
   updated_at: "2019-11-20 [15:41:36]",
   user: user3
 )
-lama10.photo.attach(io: file1, filename: 'CX14R4buQvLEhuLJFmCA1XZk.jpg', content_type: 'image/jpg')
-lama10.photo.attach(io: file2, filename: '2zSjsx39eTisRzHxVJX2GwnR.jpg', content_type: 'image/jpg')
-lama10.photo.attach(io: file3, filename: '17z6fRwMn95oWoivP9wBQimS.jpg', content_type: 'image/jpg')
+lama10.photos.attach(io: file1, filename: 'shallow-focus-photography-of-brown-and-black-animal-594399_agohtg.jpg', content_type: 'image/jpg')
+lama10.photos.attach(io: file2, filename: '2zSjsx39eTisRzHxVJX2GwnR.jpg', content_type: 'image/jpg')
+lama10.photos.attach(io: file3, filename: '17z6fRwMn95oWoivP9wBQimS.jpg', content_type: 'image/jpg')
 lama10.save
 puts 'lama10 created!'
 
@@ -278,9 +278,9 @@ lama11 = Lama.new(
   updated_at: "2019-11-20 [15:42:59]",
   user: user3
 )
-lama11.photo.attach(io: file1, filename: 'animal-animal-photography-animal-world-blur-277218_mxrrar.jpg', content_type: 'image/jpg')
-lama11.photo.attach(io: file2, filename: 'white-and-brown-llama-2253639_kcxup2.jpg', content_type: 'image/jpg')
-lama11.photo.attach(io: file3, filename: 'shallow-focus-photography-of-llama-1201426_b9gxv4.jpg', content_type: 'image/jpg')
+lama11.photos.attach(io: file1, filename: 'animal-animal-photography-animal-world-blur-277218_mxrrar.jpg', content_type: 'image/jpg')
+lama11.photos.attach(io: file2, filename: 'white-and-brown-llama-2253639_kcxup2.jpg', content_type: 'image/jpg')
+lama11.photos.attach(io: file3, filename: 'shallow-focus-photography-of-llama-1201426_b9gxv4.jpg', content_type: 'image/jpg')
 lama11.save
 puts 'lama11 created!'
 
