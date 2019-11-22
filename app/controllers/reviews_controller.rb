@@ -4,14 +4,26 @@ class ReviewsController < ApplicationController
     @lama = Lama.find(params[:lama_id])
   end
 
+  def index
+    @lama = Lama.find(params[:lama_id])
+    @reviews = Review.find(@lama.id)
+  end
+
   def create
     @lama = Lama.find(params[:lama_id])
+    @reviews = Review.where(lama_id: @lama.id)
     @review = Review.new(review_params)
     @review.lama = @lama
     if @review.save
-      redirect_to lama_path(@lama)
+      respond_to do |format|
+        format.html { redirect_to lama_path(@lama) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render "lamas/show"
+      respond_to do |format|
+        format.html { render 'lamas/show' }
+        format.js  # <-- idem
+      end
     end
   end
 
