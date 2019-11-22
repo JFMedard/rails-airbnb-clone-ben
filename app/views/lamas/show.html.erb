@@ -43,9 +43,14 @@
     </div>
   </div>
   <div class="lama-description">
-    <%= render 'reviews/show', lama: @lama, review: @reviews %>
 
+     <%= render 'reviews/show', lama: @lama, review: @reviews %>
+  <div class="form-registration">
+    <div class="form-group">
+    <h1>Leave a review</h1>
      <%= render 'reviews/form', lama: @lama, review: @review %>
+   </div>
+ </div>
   </div>
 </div>
 
